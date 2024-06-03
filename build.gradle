@@ -7,11 +7,19 @@ version = '1.0-SNAPSHOT'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://repo.papermc.io/repository/maven-public/'
+    }
 }
 
 dependencies {
-    testImplementation platform('org.junit:junit-bom:5.10.0')
+    compileOnly 'io.papermc.paper:paper-api:1.20-R0.1-SNAPSHOT'
+
+    testImplementation 'com.github.seeseemelk:MockBukkit-v1.20:3.9.0'
+    testImplementation 'io.papermc.paper:paper-api:1.20-R0.1-SNAPSHOT'
     testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    testImplementation platform('org.junit:junit-bom:5.10.0')
 }
 
 test {
